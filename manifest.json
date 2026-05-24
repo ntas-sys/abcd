@@ -1,20 +1,19 @@
 {
-  "id": "media.statichun",
   "name": "Media Provider",
-  "version": "1.0.0",
-  "description": "Media stream provider",
-  "logo": "https://kinobd.net/favicon.ico",
-  "resources": ["stream"],
-  "types": ["movie"],
-  "idPrefixes": ["tt"],
-  "behaviorHints": {
-    "configurable": false,
-    "configurationRequired": false
-  },
-  "providers": [
+  "version": "1.0",
+  "scrapers": [
     {
-      "id": "statichun",
-      "file": "providers/statichun.js"
+      "id": "nuvio-statichun",
+      "name": "StaticHUN",
+      "description": "KinoBD Collaps player streaming (~6s)",
+      "version": "1.0",
+      "author": "Nuvio Team",
+      "supportedTypes": ["movie"],
+      "filename": "providers/statichun.js",
+      "enabled": true,
+      "formats": ["m3u8"],
+      "logo": "https://kinobd.net/favicon.ico",
+      "contentLanguage": ["en", "ru"]
     }
   ]
 }
