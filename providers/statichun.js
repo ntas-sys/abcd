@@ -228,21 +228,26 @@ function getStreams(tmdbId, mediaType, seasonNum, episodeNum) {
       const resolvedStreams = [];
 
       for (const cs of collapsStreams) {
-        const m3u8Url = yield getCollapsStream(cs._collapsUrl);
-        if (m3u8Url) {
-          resolvedStreams.push({
-            name: cs.name + (cs.quality && cs.quality !== "Unknown" ? ` (${cs.quality})` : ""),
-            title: cs.title + (cs.translate ? ` - ${cs.translate}` : ""),
-            url: m3u8Url,
-            quality: cs.quality || "Unknown",
-            provider: "statichun",
-            behaviorHints: {
-              notWebReady: false,
-              bingeGroup: "statichun"
-            }
-          });
+          const m3u8Url = yield getCollapsStream(cs._collapsUrl);
+          if (m3u8Url) {
+            resolvedStreams.push({
+              name: cs.name + (cs.quality && cs.quality !== "Unknown" ? ` (${cs.quality})` : ""),
+              title: cs.title + (cs.translate ? ` - ${cs.translate}` : ""),
+              url: m3u8Url,
+              headers: {
+                "Referer": "https://statichun.com/",
+                "Origin": "https://statichun.com",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+              },  // ← BU VIRGÜL EKSIKTI
+              quality: cs.quality || "Unknown",
+              provider: "statichun",
+              behaviorHints: {
+                notWebReady: false,
+                bingeGroup: "statichun"
+              }
+            });
+          }
         }
-      }
 
       console.log(`[Media] Returning ${resolvedStreams.length} streams`);
       return resolvedStreams;
