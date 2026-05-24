@@ -238,10 +238,7 @@ function getStreams(tmdbId, mediaType, seasonNum, episodeNum) {
             provider: "statichun",
             behaviorHints: {
               notWebReady: false,
-              bingeGroup: "statichun",
-              headers: {
-                "Referer": "https://statichun.com/",
-                "Origin": "https://statichun.com"
+              bingeGroup: "statichun"
             }
           });
         }
