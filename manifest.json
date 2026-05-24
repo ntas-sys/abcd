@@ -1,0 +1,20 @@
+{
+  "id": "media.statichun",
+  "name": "Media Provider",
+  "version": "1.0.0",
+  "description": "Media stream provider",
+  "logo": "https://kinobd.net/favicon.ico",
+  "resources": ["stream"],
+  "types": ["movie"],
+  "idPrefixes": ["tt"],
+  "behaviorHints": {
+    "configurable": false,
+    "configurationRequired": false
+  },
+  "providers": [
+    {
+      "id": "statichun",
+      "file": "providers/statichun.js"
+    }
+  ]
+}
