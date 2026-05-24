@@ -14,6 +14,19 @@
       "formats": ["m3u8"],
       "logo": "https://kinobd.net/favicon.ico",
       "contentLanguage": ["en", "ru"]
+    },
+    {
+      "id": "nuvio-kinobox",
+      "name": "Kinobox",
+      "description": "o1.kkkppp.live / Kinobox aggregator streaming via IMDB",
+      "version": "1.0",
+      "author": "Nuvio Team",
+      "supportedTypes": ["movie"],
+      "filename": "providers/kinobox.js",
+      "enabled": true,
+      "formats": ["m3u8", "mp4", "dash"],
+      "logo": "https://a.ddbb.live/favicon.ico",
+      "contentLanguage": ["ru", "en"]
     }
   ]
 }
