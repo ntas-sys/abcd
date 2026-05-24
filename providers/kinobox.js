@@ -52,11 +52,11 @@ var DEFAULT_HEADERS = {
 
 // Player-specific referers
 var PLAYER_REFERERS = {
-  "Collaps": "https://api.ortified.ws/",
-  "Alloha": "https://theatre.stravers.live/",
-  "Turbo": "https://64650e1b.obrut.show/",
-  "Veoveo": "https://player.temptcdn.com/",
-  "Vibix": "https://667718341.videoframe2.com/"
+  "Collaps": "https://o1.kkkppp.live/",
+  "Alloha": "https://o1.kkkppp.live/",
+  "Turbo": "https://o1.kkkppp.live/",
+  "Veoveo": "https://o1.kkkppp.live/",
+  "Vibix": "https://o1.kkkppp.live/"
 };
 
 // ==================== HTTP ====================
