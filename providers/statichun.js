@@ -230,22 +230,23 @@ function getStreams(tmdbId, mediaType, seasonNum, episodeNum) {
       for (const cs of collapsStreams) {
           const m3u8Url = yield getCollapsStream(cs._collapsUrl);
           if (m3u8Url) {
+            const qualityLabel = cs.quality && cs.quality !== "Unknown" ? cs.quality : "Auto";
             resolvedStreams.push({
-              name: cs.name + (cs.quality && cs.quality !== "Unknown" ? ` (${cs.quality})` : ""),
+              name: `StaticHUN - Collaps ${qualityLabel}`,
               title: cs.title + (cs.translate ? ` - ${cs.translate}` : ""),
               url: m3u8Url,
+              quality: cs.quality || "Unknown",
               headers: {
                 "Referer": "https://statichun.com/",
                 "Origin": "https://statichun.com",
                 "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
-              },  // ← BU VIRGÜL EKSIKTI
-              quality: cs.quality || "Unknown",
+              },
               provider: "statichun",
               behaviorHints: {
                 notWebReady: false,
                 bingeGroup: "statichun"
               }
-            });
+            });  
           }
         }
 
